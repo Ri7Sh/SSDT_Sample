@@ -42,7 +42,7 @@ jobs:
     - name: Deploy to LocalDB
       uses: azure/sql-action@v2.1
       with:
-        server-name: '(localdb)\MSSQLLocalDB'
-        database-name: 'MyDatabase'
+        connection-string: 'Data Source=(localdb)\ProjectModels;Initial Catalog=dbtest;Integrated Security=True;Persist Security Info=False;Pooling=False;Multiple Active Result Sets=False;Encrypt=False;Trust Server Certificate=False'
         dacpac-file: './bin/Release/Database37.dacpac'
-        additional-arguments: '/p:BlockOnPossibleDataLoss=false'
+        action: 'publish'
+        arguments: '/p:DropObjectsNotInSource=true'   # Optional properties parameters for SqlPackage Publish
