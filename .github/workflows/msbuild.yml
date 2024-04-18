@@ -35,11 +35,11 @@ jobs:
 
     - name: get sqlpackage version
       working-directory: C:\Program Files\Microsoft SQL Server\160\DAC\bin\
-      run: C:\Program Files\Microsoft SQL Server\160\DAC\bin\SqlPackage /version
+      run: "C:\Program Files\Microsoft SQL Server\160\DAC\bin\SqlPackage" /version
     
     - name: get sqlpackage version
       working-directory: C:\Program Files\Microsoft Visual Studio\2022\Enterprise\Common7\IDE\Extensions\Microsoft\SQLDB\DAC\
-      run: C:\Program Files\Microsoft Visual Studio\2022\Enterprise\Common7\IDE\Extensions\Microsoft\SQLDB\DAC\SqlPackage /version
+      run: "C:\Program Files\Microsoft Visual Studio\2022\Enterprise\Common7\IDE\Extensions\Microsoft\SQLDB\DAC\SqlPackage" /version
   
     - name: Build
       working-directory: ${{env.GITHUB_WORKSPACE}}
